@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASHION</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease;
+            font-family: 'Impact', sans-serif; /* Apply Impact font to all text */
+        }
+        header, section, footer {
+            text-align: center;
+            color: rgb(0, 0, 0);
+        }
+        header h1, .btn {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            border: none;
+            background: none;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const title = document.querySelector("header h1");
+            const inspirationLink = document.querySelector(".btn");
+            const body = document.body;
+
+            const textColors = ["red", "green", "blue"];
+            const bgColors = [
+                "rgb(255, 0, 0)",    // Red
+                "rgb(0, 255, 0)",    // Purple
+                "rgb(0, 0, 255)",    // Blue
+                "rgb(255, 255, 0)",  // Orange
+                "rgb(0, 255, 255)",  // Cyan
+                "rgb(255, 0, 255)"   // Magenta
+            ];
+
+            let textColorIndex = 0;
+
+            function changeTextColor(element) {
+                element.style.color = textColors[textColorIndex];
+                textColorIndex = (textColorIndex + 1) % textColors.length;
+            }
+
+            function changeBackgroundColor(event) {
+                const width = window.innerWidth;
+                const height = window.innerHeight;
+                const xRatio = event.clientX / width;
+                const yRatio = event.clientY / height;
+
+                const colorIndex = Math.floor(xRatio * 3) + Math.floor(yRatio * 2) * 3;
+                body.style.backgroundColor = bgColors[colorIndex % bgColors.length];
+            }
+
+            title.addEventListener("mouseover", function() {
+                changeTextColor(title);
+            });
+
+            inspirationLink.addEventListener("mouseover", function() {
+                changeTextColor(inspirationLink);
+            });
+
+            document.addEventListener("mousemove", changeBackgroundColor);
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>FASHION</h1>
+    </header>
+    <section class="hero">
+        <p>EXPLORE & DISCOVER YOUR SENSE OF STYLE.</p>
+        <p> DEFINITION: “Fashion is a dynamic force that ignites our sense of self-worth, enhances our creativity, and reflects our inner beauty”</p>
+        <P> FASHION is A SENSE OF ART. A MASTERPIECE that was crafted together from designer to consumer to project creativity as our bodies are the blank canvas.
+        </P>
+        <a href="#" class="btn">WHERE</a>
+        <P>FASHION occurs from within and is then expressed to the outer world. Our use of clothing pieces, accessories and shoes can say a lot about our personalities and interests. IT IS A SENSE OF IDENTITY. 
+
+            Exploring different clothing stores and being open to different styles can help individuals discover their sense of FASHION.  </P>
+
+            <a href="#" class="btn">WHY</a>
+            <P>FASHION can allow your exterior to speak to world rather than your voice. It communicates your identity and is one of the most powerful tools for self-expression.
+
+                FASHION impacts how we perceive each other and can either help us or delay us from connecting with like-minded people.
+                
+                In that case… TODAY IS THE DAY YOU DISPLAY YOUR SENSE OF FASHION & STYLE IN THE WAY YOU WANT TO BE SEEN. LET IT SPEAK FOR YOU. LET IT BRING OPPORTUNITIES TO CONNECT WITH OTHERS AND EXPRESS YOUR IDENTITY! </P>
+    </section>
+    <section class="about">
+
+        <img src="giphy.gif" alt="fashion"
+        style="width: 200px;height:300px;">
+        <img src="giphy.gif" alt="fashion"
+        style="width: 200px;height:300px;">
+        <img src="giphy.gif" alt="fashion"
+        style="width: 200px;height:300px;">
+        <img src="giphy.gif" alt="fashion"
+        style="width: 200px;height:300px;">
+
+    </section>
+    <footer>
+        <p>&copy; 2024 FASHION. All rights reserved.</p>
+    </footer>
+</body>
+</html>
